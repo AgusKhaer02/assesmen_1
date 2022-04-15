@@ -1,8 +1,10 @@
+
+/* menerapkan font family pada seluruh elemen */
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Style inputs, select elements and textareas */
+/* Style untuk input (khususnya untuk bertype text,email,dan file), select, dan textarea*/
 input[type=text],input[type=email],input[type=file],
 select,
 textarea {
@@ -14,29 +16,38 @@ textarea {
     resize: vertical;
 }
 
+/* ketka type inputnya adalah file , maka ganti warna background menjadi white */
 input[type=file]{
     background-color: white;
 }
 
-/* Style the label to display next to the inputs */
+/* label yang akan ditampilkan disamping input */
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
 
-/* Style the submit button */
+/* Style untuk input submit dan reset */
 input[type=submit],input[type=reset] {
     background-color: #04AA6D;
     color: white;
+    /* memberikan luas pada tombolnya */
+    /* vertical = 12 dan horizontal = 20 */
     padding: 12px 20px;
+    /* menghapus garis pada tombol */
     border: none;
+    /* menambahkan lengkungan pada setiap sudut tombol */
     border-radius: 4px;
+    /* menggunakan pointer seperti jari telunjuk pada input submit dan reset */
     cursor: pointer;
+    /* buat tombolnya seperti mengambang ke kanan */
     float: right;
+    /* memberikan jarak atas 10px dan kiri 15px,  */
     margin-top: 10px;
     margin-left: 15px;
 }
 
+/* set warna merah untuk input bertipe reset */
 input[type=reset]{
     background-color: rgb(252, 23, 23);
 }
@@ -70,14 +81,19 @@ input[type=reset]{
     margin-top: 6px;
 }
 
-/* Clear floats after the columns */
+/* menghapus floats setelah kolom */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* ini adalah kondisi ketika layar yang digunakan sepanjang 600px
+    ketika kurang dari 600px maka style yang sebelumnya akan tertimpa
+    dengan hal ini semua class col-25,45,75,input submit,dan reset
+    itu dengan panjang 100% (mengikuti ukuran layar) dan margin top 10
+
+*/
 @media screen and (max-width: 600px) {
 
     .col-25,

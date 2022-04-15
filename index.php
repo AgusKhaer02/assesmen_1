@@ -11,6 +11,7 @@
 
 <table>
     <tr>
+        <!-- kolom pertama untuk form -->
         <td style="width: 70%;">
             <div class="container" id="1">
                 <h1>Form Assesmen 1</h1>
@@ -129,18 +130,24 @@
                 </form>
             </div>    
         </td>
+
+        <!-- kolom kedua untuk menampilkan hasil input -->
         <td style="padding-right:20px ;">
         <div class="container">
         <div id="result">
                 <?php
+                    // cek apakah nilai post itu tidak kosong alias ada?
                     if(!empty($_POST)){
 
-                        // print_r($_POST);
+                        // mempersiapkan lokasi file yang akan dituju
+                        // foto kali ini akan dimasukan ke dalam folder images
                         $direktori= "images/";
+                        // mengambil nama pada file foto
                         $nama_foto = $_FILES["photo_file"]["name"];
-                        $size_foto = $_FILES["photo_file"]["size"];
-                        $tipe_foto = $_FILES["photo_file"]["type"];
+                        // menggabungkan alamat direktori dengan nama file
+                        // contoh : images/image1.png
                         $upload = $direktori.$nama_foto;
+                        // mulai memasukan gambar ke dalam direktori yang sudah ditentukan
                         move_uploaded_file($_FILES["photo_file"]["tmp_name"], $upload);
                     ?>
                         <h2>Your Input</h2>
